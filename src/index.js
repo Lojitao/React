@@ -3,11 +3,16 @@
 //React必要的核心包
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
+import { Provider } from 'react-redux';
+import store from './store/index';
 //導入項目組件
 import App from './App';
 
 //把APP根結點渲染到id為root的dom節點上
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />);
+root.render(
+//包裹 App，傳入 store
+<Provider store={store}> 
+  <App />
+</Provider>);
 

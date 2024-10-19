@@ -1,6 +1,7 @@
 //項目的根組件
 //APP->index.js->public/index.html(root)
 import { useEffect,useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux';
 
 function useGetList(){
   const [list,setList] = useState([])
@@ -24,6 +25,9 @@ function Items({item}){
 }
 
 function App() {
+  const count = useSelector((state) => state.counter.count);  // 獲取狀態
+  console.log('storeCount',count);
+
   const {list, setList} = useGetList()
  
   return (
