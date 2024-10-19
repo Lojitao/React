@@ -4,7 +4,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
-import store from './store/index';
+import stores from './store/index';
 //導入項目組件
 import App from './App';
 
@@ -12,7 +12,7 @@ import App from './App';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 //包裹 App，傳入 store
-<Provider store={store}> 
+<Provider store={stores}> 
   <App />
 </Provider>);
 
