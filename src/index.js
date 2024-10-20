@@ -4,15 +4,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
-import stores from './store/index';
-//導入項目組件
-import App from './App';
+import stores from './store';
+import { // React Router 
+  RouterProvider 
+} from 'react-router-dom';
+import router from './router'//引入router檔案
+
+import App from './App';//導入項目組件
 
 //把APP根結點渲染到id為root的dom節點上
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-//包裹 App，傳入 store
-<Provider store={stores}> 
-  <App />
-</Provider>);
+  <Provider store={stores}> 
+    <RouterProvider router={router}></RouterProvider>
+  </Provider>
+);
 
